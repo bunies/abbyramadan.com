@@ -50,16 +50,16 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 w-full bg-black z-50 border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-[87.5rem] mx-auto px-[1rem] sm:px-[1.5rem] lg:px-[2rem]">
+        <div className="flex justify-between items-center h-[4rem]">
           <a 
             href="#home" 
             onClick={(e) => handleClick(e, "#home")}
-            className="text-2xl font-bold text-white hover:text-gray-300 transition-colors"
+            className="text-[1.5rem] font-bold text-white hover:text-gray-300 transition-colors"
           >
             AR
           </a>
-          <div className="flex space-x-8">
+          <div className="flex space-x-[2rem]">
             {navItems.map((item) => (
               <a
                 key={item.href}
