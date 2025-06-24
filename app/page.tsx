@@ -199,13 +199,10 @@ export default function Home() {
           </div>
 
           <div className='flex flex-col sm:flex-row gap-4 justify-center pt-8'>
-            <Button>View Experience</Button>
-            <Button
-              asChild
-              variant='outline'
-              size='lg'
-              className='group'
-            >
+            <Button asChild size='lg'>
+              <a href='#experience'>View Experience</a>
+            </Button>
+            <Button asChild variant='outline' size='lg' className='group'>
               <a href='#projects'>
                 View Projects
                 <span className='inline-block ml-2 group-hover:translate-x-1 transition-transform'>
@@ -373,7 +370,7 @@ export default function Home() {
               Interested in working together? Let's connect and discuss how I
               can help with your financial challenges.
             </p>
-            <Button asChild variant='default' size='lg'>
+            <Button asChild size='lg'>
               <a href='mailto:abbyramadan98@gmail.com'>
                 Get in Touch
                 <span className='ml-2'>→</span>
