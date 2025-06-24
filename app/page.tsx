@@ -188,18 +188,18 @@ export default function Home() {
     <div className="w-full">
       {/* Hero Section */}
       <section id="home" className="flex flex-col items-center justify-center min-h-[100vh] px-4">
-        <div className="max-w-[52rem] w-full space-y-8 text-center">
+        <div className="max-w-4xl w-full space-y-8 text-center">
           <div className="space-y-4">
-            <h1 className="text-[3.75rem] sm:text-[6rem] font-bold tracking-tight fade-in">
+            <h1 className="text-6xl sm:text-8xl font-bold tracking-tight fade-in">
               Abby Ramadan
             </h1>
-            <p className="text-[1.5rem] sm:text-[1.875rem] text-gray-400 fade-in delay-200">
+            <p className="text-2xl sm:text-3xl text-gray-400 fade-in delay-200">
               Financial Analyst & Artist
             </p>
           </div>
           
-          <div className="space-y-4 max-w-[42rem] mx-auto">
-            <p className="text-[1.125rem] text-gray-300 leading-relaxed fade-in delay-400">
+          <div className="space-y-4 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 leading-relaxed fade-in delay-400">
               Welcome to my digital space. I blend data science with creative expression,
               turning complex problems into elegant solutions.
             </p>
@@ -210,7 +210,7 @@ export default function Home() {
               asChild
               variant="default"
               size="lg"
-              className="group px-8 py-4 text-[1.125rem] slide-in-left delay-500"
+              className="group px-8 py-4 text-lg slide-in-left delay-500"
             >
               <a href="#projects">
                 View Projects
@@ -221,7 +221,7 @@ export default function Home() {
               asChild
               variant="outline"
               size="lg"
-              className="group px-8 py-4 text-[1.125rem] slide-in-right delay-500"
+              className="group px-8 py-4 text-lg slide-in-right delay-500"
             >
               <a href="#experience">
                 Experience
@@ -230,17 +230,17 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="pt-20 grid grid-cols-3 gap-8 max-w-[42rem] mx-auto">
+          <div className="pt-20 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center scale-in delay-600">
-              <div className="text-[1.875rem] font-bold mb-2">5+</div>
+              <div className="text-3xl font-bold mb-2">5+</div>
               <div className="text-gray-400 text-sm uppercase tracking-wider">Years Experience</div>
             </div>
             <div className="text-center scale-in delay-700">
-              <div className="text-[1.875rem] font-bold mb-2">20+</div>
+              <div className="text-3xl font-bold mb-2">20+</div>
               <div className="text-gray-400 text-sm uppercase tracking-wider">Projects</div>
             </div>
             <div className="text-center scale-in delay-800">
-              <div className="text-[1.875rem] font-bold mb-2">3</div>
+              <div className="text-3xl font-bold mb-2">3</div>
               <div className="text-gray-400 text-sm uppercase tracking-wider">Domains</div>
             </div>
           </div>
@@ -249,10 +249,10 @@ export default function Home() {
 
       {/* Projects Section */}
       <section id="projects" className="min-h-[100vh] px-4 py-20">
-        <div className="max-w-[80rem] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="text-[3rem] sm:text-[3.75rem] font-bold mb-4 fade-in">Projects</h2>
-            <p className="text-[1.25rem] text-gray-400 max-w-[42rem] mx-auto fade-in delay-200">
+            <h2 className="text-5xl sm:text-6xl font-bold mb-4 fade-in">Projects</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto fade-in delay-200">
               A collection of data science projects showcasing machine learning, 
               data engineering, and analytical solutions.
             </p>
@@ -262,7 +262,7 @@ export default function Home() {
             {projects.map((project) => (
               <Card
                 key={project.id}
-                className={`group border-gray-800 hover:border-gray-600 transition-all duration-[300ms] bg-gray-950 scale-in delay-${(project.id - 1) * 100}`}
+                className={`group border-gray-800 hover:border-gray-600 transition-all duration-300 bg-gray-950 scale-in delay-${(project.id - 1) * 100}`}
               >
                 <CardHeader>
                   <div className="mb-2">
@@ -270,7 +270,7 @@ export default function Home() {
                       {project.category}
                     </span>
                   </div>
-                  <CardTitle className="text-[1.25rem] group-hover:text-gray-300 transition-colors">
+                  <CardTitle className="text-xl group-hover:text-gray-300 transition-colors">
                     {project.title}
                   </CardTitle>
                   <CardDescription className="text-gray-400 text-sm leading-relaxed">
@@ -283,7 +283,7 @@ export default function Home() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-gray-900 border border-gray-800 text-gray-300 text-xs"
+                        className="px-3 py-1 bg-gray-900 border border-gray-800 text-gray-300 text-xs rounded"
                       >
                         {tech}
                       </span>
@@ -328,56 +328,55 @@ export default function Home() {
 
       {/* Experience Section */}
       <section id="experience" className="min-h-[100vh] px-4 py-20">
-        <div className="max-w-[72rem] mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="text-[3rem] sm:text-[3.75rem] font-bold mb-4 fade-in">Experience</h2>
-            <p className="text-[1.25rem] text-gray-400 max-w-[42rem] mx-auto fade-in delay-200">
+            <h2 className="text-5xl sm:text-6xl font-bold mb-4 fade-in">Experience</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto fade-in delay-200">
               A journey through data science, from analysis to machine learning engineering.
             </p>
           </div>
 
           <div className="mb-20">
-            <h3 className="text-[1.875rem] font-bold mb-8 slide-in-left">Professional Journey</h3>
-            <div className="space-y-12">
-              {experiences.map((exp, index) => (
-                <div key={exp.id} className={`relative pl-8 border-l-2 border-gray-800 fade-in delay-${(exp.id - 1) * 200}`}>
-                  <div className="absolute -left-2 top-0 w-4 h-4 bg-white rounded-full"></div>
-                  <div className="mb-4">
-                    <h4 className="text-[1.5rem] font-semibold">{exp.role}</h4>
-                    <div className="flex items-center gap-4 text-gray-400 mt-1">
-                      <span>{exp.company}</span>
-                      <span>•</span>
-                      <span>{exp.period}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 mb-4">{exp.description}</p>
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-gray-500 mr-2">▪</span>
-                        <span className="text-gray-400">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+            <h3 className="text-3xl font-bold mb-8 slide-in-left">Professional Journey</h3>
+            <div className="space-y-6">
+              {experiences.map((exp) => (
+                <Card key={exp.id} className={`border-gray-800 bg-gray-950 fade-in delay-${(exp.id - 1) * 200}`}>
+                  <CardHeader>
+                    <CardTitle className="text-2xl">{exp.role}</CardTitle>
+                    <CardDescription className="text-base">
+                      {exp.company} • {exp.period}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-300 mb-4">{exp.description}</p>
+                    <ul className="space-y-2">
+                      {exp.achievements.map((achievement, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="text-gray-500 mr-2">▪</span>
+                          <span className="text-gray-400">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
 
           <div className="mb-20">
-            <h3 className="text-[1.875rem] font-bold mb-8 slide-in-left">Technical Skills</h3>
+            <h3 className="text-3xl font-bold mb-8 slide-in-left">Technical Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {Object.entries(skills).map(([category, items]) => (
                 <Card key={category} className="border-gray-800 bg-gray-950 scale-in">
                   <CardHeader>
-                    <CardTitle className="text-xl text-gray-100">{category}</CardTitle>
+                    <CardTitle className="text-xl">{category}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {items.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-gray-900 border border-gray-800 text-gray-300 text-sm"
+                          className="px-3 py-1 bg-gray-900 border border-gray-800 text-gray-300 text-sm rounded"
                         >
                           {skill}
                         </span>
@@ -390,18 +389,26 @@ export default function Home() {
           </div>
 
           <div className="mb-20">
-            <h3 className="text-[1.875rem] font-bold mb-8 slide-in-left">Education</h3>
+            <h3 className="text-3xl font-bold mb-8 slide-in-left">Education</h3>
             <div className="space-y-6">
-              <div className="border-l-2 border-gray-800 pl-8 slide-in-right">
-                <h4 className="text-[1.25rem] font-semibold">Master of Science in Data Science</h4>
-                <p className="text-gray-400">University Name • 2016 - 2018</p>
-                <p className="text-gray-300 mt-2">Specialized in machine learning and statistical modeling</p>
-              </div>
-              <div className="border-l-2 border-gray-800 pl-8 slide-in-right delay-200">
-                <h4 className="text-[1.25rem] font-semibold">Bachelor of Science in Mathematics</h4>
-                <p className="text-gray-400">University Name • 2012 - 2016</p>
-                <p className="text-gray-300 mt-2">Minor in Computer Science</p>
-              </div>
+              <Card className="border-gray-800 bg-gray-950 slide-in-right">
+                <CardHeader>
+                  <CardTitle className="text-xl">Master of Science in Data Science</CardTitle>
+                  <CardDescription className="text-base">University Name • 2016 - 2018</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300">Specialized in machine learning and statistical modeling</p>
+                </CardContent>
+              </Card>
+              <Card className="border-gray-800 bg-gray-950 slide-in-right delay-200">
+                <CardHeader>
+                  <CardTitle className="text-xl">Bachelor of Science in Mathematics</CardTitle>
+                  <CardDescription className="text-base">University Name • 2012 - 2016</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300">Minor in Computer Science</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
@@ -426,10 +433,10 @@ export default function Home() {
 
       {/* Art Section */}
       <section id="art" className="min-h-[100vh] px-4 py-20">
-        <div className="max-w-[80rem] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
-            <h2 className="text-[3rem] sm:text-[3.75rem] font-bold mb-4 fade-in">Art & Creative Work</h2>
-            <p className="text-[1.25rem] text-gray-400 max-w-[42rem] mx-auto fade-in delay-200">
+            <h2 className="text-5xl sm:text-6xl font-bold mb-4 fade-in">Art & Creative Work</h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto fade-in delay-200">
               Where data science meets creative expression. Exploring the intersection
               of algorithms, aesthetics, and artistic vision.
             </p>
@@ -454,34 +461,36 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArtworks.map((artwork) => (
-              <div
-                key={artwork.id}
-                className={`group cursor-pointer fade-in delay-${(artwork.id - 1) * 100}`}
+              <Card 
+                key={artwork.id} 
+                className={`border-gray-800 bg-gray-950 hover:border-gray-600 transition-all duration-300 cursor-pointer group fade-in delay-${(artwork.id - 1) * 100}`}
               >
-                <div className="aspect-square bg-gray-900 border border-gray-800 overflow-hidden mb-4 relative">
+                <div className="aspect-square bg-gray-900 overflow-hidden relative">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <p className="text-gray-600 text-sm">Artwork Preview</p>
                   </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-[300ms] flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span className="text-white text-[1.125rem]">View Details</span>
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-80 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span className="text-white text-lg">View Details</span>
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-[1.25rem] font-semibold mb-1">{artwork.title}</h3>
-                  <p className="text-gray-400 text-sm mb-2">
+                <CardHeader>
+                  <CardTitle className="text-xl">{artwork.title}</CardTitle>
+                  <CardDescription className="text-base">
                     {artwork.medium} • {artwork.year}
-                  </p>
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
                   <p className="text-gray-300 text-sm leading-relaxed">
                     {artwork.description}
                   </p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
           <div className="mt-20 text-center border-t border-gray-800 pt-20">
-            <h3 className="text-[1.875rem] font-bold mb-6 fade-in">Creative Process</h3>
-            <div className="max-w-[48rem] mx-auto text-gray-300 space-y-4">
+            <h3 className="text-3xl font-bold mb-6 fade-in">Creative Process</h3>
+            <div className="max-w-3xl mx-auto text-gray-300 space-y-4">
               <p className="fade-in delay-200">
                 My artistic practice explores the aesthetic possibilities within data and algorithms. 
                 Each piece begins with a question: How can we make the invisible patterns in data visible 
