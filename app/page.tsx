@@ -1,10 +1,3 @@
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const experiences = [
@@ -133,7 +126,6 @@ const interests = [
 ];
 
 export default function Home() {
-
   return (
     <div className='w-full'>
       {/* Hero Section */}
@@ -144,7 +136,7 @@ export default function Home() {
         <div className='max-w-4xl w-full flex flex-col gap-8 text-center'>
           <div className='flex flex-col gap-4'>
             <h1 className='text-6xl sm:text-8xl font-bold tracking-tight'>
-              Abby L. Ramadan
+              Abby Ramadan
             </h1>
             <p className='text-2xl sm:text-3xl text-gray-400'>
               Financial Analyst & Creative Mind
@@ -157,20 +149,6 @@ export default function Home() {
               creative expression, turning complex data into actionable
               insights.
             </p>
-          </div>
-
-          <div className='flex flex-col sm:flex-row gap-4 justify-center pt-8'>
-            <Button asChild size='lg'>
-              <a href='#experience'>View Experience</a>
-            </Button>
-            <Button asChild variant='outline' size='lg' className='group'>
-              <a href='#interests'>
-                View Interests
-                <span className='inline-block ml-2 group-hover:translate-x-1 transition-transform'>
-                  →
-                </span>
-              </a>
-            </Button>
           </div>
 
           <div className='pt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto'>
@@ -217,112 +195,101 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id='experience' className='min-h-[100vh] px-4 py-20'>
+      <section id='experience' className='min-h-[100vh] px-4 pb-20'>
         <div className='max-w-6xl mx-auto'>
-          <div className='mb-16 text-center'>
-            <h2 className='text-5xl sm:text-6xl font-bold mb-4'>
-              Experience
-            </h2>
-            <p className='text-xl text-gray-400 max-w-2xl mx-auto'>
-              A journey through finance, from analysis to strategic leadership.
-            </p>
+          <h4 className='text-xl font-semibold mb-6 text-gray-400'>
+            Experience
+          </h4>
+          <div className='flex flex-col gap-12 mb-16'>
+            {experiences.map(exp => (
+              <div key={exp.id} className='border-l-2 border-gray-800 pl-6'>
+                <h3 className='text-2xl font-semibold'>{exp.role}</h3>
+                <p className='text-gray-400 mb-2'>
+                  {exp.company} • {exp.period}
+                </p>
+                <p className='text-gray-300 mb-4'>{exp.description}</p>
+                <ul className='flex flex-col gap-2'>
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className='flex items-start'>
+                      <span className='text-gray-500 mr-2'>•</span>
+                      <span className='text-gray-400 text-sm'>
+                        {achievement}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
-          <div className='mb-20'>
-            <h3 className='text-3xl font-bold mb-8'>
-              Professional Journey
-            </h3>
-            <div className='flex flex-col gap-6'>
-              {experiences.map(exp => (
-                <Card
-                  key={exp.id}
-                  className='border-gray-800 bg-gray-950'
-                >
-                  <CardHeader>
-                    <CardTitle>{exp.role}</CardTitle>
-                    <CardDescription>
-                      {exp.company} • {exp.period}
-                    </CardDescription>
-                    <p className='text-gray-300 mt-3'>{exp.description}</p>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className='flex flex-col gap-2'>
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i} className='flex items-start'>
-                          <span className='text-gray-500 mr-2'>▪</span>
-                          <span className='text-gray-400'>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <div className='mb-20'>
-            <h3 className='text-3xl font-bold mb-8'>
+          <div className='mb-16'>
+            <h4 className='text-xl font-semibold mb-6 text-gray-400'>
               Technical Skills
-            </h3>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            </h4>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
               {Object.entries(skills).map(([category, items]) => (
-                <Card
-                  key={category}
-                  className='border-gray-800 bg-gray-950'
-                >
-                  <CardHeader>
-                    <CardTitle className='text-xl'>{category}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='flex flex-wrap gap-2'>
-                      {items.map(skill => (
-                        <span
-                          key={skill}
-                          className='px-3 py-1 bg-gray-900 border border-gray-800 text-gray-300 text-sm rounded'
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <div key={category}>
+                  <h5 className='text-lg font-medium mb-3'>{category}</h5>
+                  <div className='flex flex-wrap gap-2'>
+                    {items.map(skill => (
+                      <span
+                        key={skill}
+                        className='px-3 py-1 bg-gray-900 border border-gray-800 text-gray-300 text-sm rounded'
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
 
-          <div className='mb-20'>
-            <h3 className='text-3xl font-bold mb-8'>Education</h3>
+          <div className='mb-16'>
+            <h4 className='text-xl font-semibold mb-6 text-gray-400'>
+              Education
+            </h4>
             <div className='flex flex-col gap-6'>
-              <Card className='border-gray-800 bg-gray-950'>
-                <CardHeader>
-                  <CardTitle className='text-xl'>
-                    Master of Accountancy
-                  </CardTitle>
-                  <CardDescription className='text-gray-400'>
-                    Case Western Reserve University • January - December 2021
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className='text-gray-300'>
-                    Advanced coursework in financial analysis and accounting
-                    principles
+              <div>
+                <h5 className='text-lg font-medium'>Master of Accountancy</h5>
+                <p className='text-gray-400'>
+                  Case Western Reserve University • January - December 2021
+                </p>
+                <p className='text-gray-300 text-sm mt-1'>
+                  Advanced coursework in financial analysis and accounting
+                  principles
+                </p>
+              </div>
+              <div>
+                <h5 className='text-lg font-medium'>
+                  Bachelor of Science in Accounting
+                </h5>
+                <p className='text-gray-400'>
+                  Case Western Reserve University • August 2017 - December 2021
+                </p>
+                <p className='text-gray-300 text-sm mt-1'>
+                  Applied Data Science Minor
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className='mb-16'>
+            <h4 className='text-xl font-semibold mb-6 text-gray-400'>
+              Interests & Hobbies
+            </h4>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl'>
+              {interests.map(interest => (
+                <div key={interest.id} className='flex flex-col gap-2'>
+                  <h5 className='text-lg font-medium'>{interest.title}</h5>
+                  <p className='text-sm text-gray-500 uppercase tracking-wider'>
+                    {interest.category}
                   </p>
-                </CardContent>
-              </Card>
-              <Card className='border-gray-800 bg-gray-950'>
-                <CardHeader>
-                  <CardTitle className='text-xl'>
-                    Bachelor of Science in Accounting
-                  </CardTitle>
-                  <CardDescription className='text-gray-400'>
-                    Case Western Reserve University • August 2017 - December
-                    2021
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className='text-gray-300'>Applied Data Science Minor</p>
-                </CardContent>
-              </Card>
+                  <p className='text-gray-300 text-sm leading-relaxed'>
+                    {interest.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -337,52 +304,6 @@ export default function Home() {
                 <span className='ml-2'>→</span>
               </a>
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Interests Section */}
-      <section id='interests' className='min-h-[100vh] px-4 py-20'>
-        <div className='max-w-7xl mx-auto'>
-          <div className='mb-16 text-center'>
-            <h2 className='text-5xl sm:text-6xl font-bold mb-4'>
-              Interests & Hobbies
-            </h2>
-            <p className='text-xl text-gray-400 max-w-2xl mx-auto'>
-              Beyond finance, I explore creative pursuits and community
-              engagement.
-            </p>
-          </div>
-
-          <div className='max-w-4xl mx-auto'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-              {interests.map((interest) => (
-                <div key={interest.id} className='flex flex-col gap-2'>
-                  <h3 className='text-2xl font-semibold'>{interest.title}</h3>
-                  <p className='text-sm text-gray-500 uppercase tracking-wider'>{interest.category}</p>
-                  <p className='text-gray-300 leading-relaxed'>
-                    {interest.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className='mt-20 text-center border-t border-gray-800 pt-20'>
-            <h3 className='text-3xl font-bold mb-6'>A Balanced Life</h3>
-            <div className='max-w-3xl mx-auto text-gray-300 flex flex-col gap-4'>
-              <p className=''>
-                I believe in maintaining a balance between analytical rigor and
-                creative expression. Whether I'm analyzing financial data or
-                creating digital illustrations, I bring the same attention to
-                detail and passion for excellence.
-              </p>
-              <p className=''>
-                My diverse interests inform my professional work, bringing fresh
-                perspectives to financial challenges and fostering innovative
-                solutions.
-              </p>
-            </div>
           </div>
         </div>
       </section>
