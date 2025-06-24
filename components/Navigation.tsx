@@ -7,9 +7,8 @@ const Navigation = () => {
 
   const navItems = [
     { href: "#home", label: "Home", id: "home" },
-    { href: "#projects", label: "Projects", id: "projects" },
     { href: "#experience", label: "Experience", id: "experience" },
-    { href: "#art", label: "Art", id: "art" },
+    { href: "#interests", label: "Interests", id: "interests" },
   ];
 
   useEffect(() => {

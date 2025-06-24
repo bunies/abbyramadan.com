@@ -95,45 +95,6 @@ const skills = {
   ],
 };
 
-const projects = [
-  {
-    id: 1,
-    title: 'Loan Portfolio Visualization Dashboard',
-    description:
-      'Built interactive dashboards to visualize loss curves and vintage performance for $100mm+ loan portfolios, enabling data-driven decision making.',
-    technologies: ['Python', 'Tableau', 'SQL', 'Excel'],
-    category: 'Data Visualization',
-    link: '#',
-  },
-  {
-    id: 2,
-    title: 'Credit Agreement Analysis Tool',
-    description:
-      'Developed automated tools to interpret credit agreements and optimize report logic, creating $500,000 in additional leverage.',
-    technologies: ['Python', 'SQL', 'Power Automate', 'Excel'],
-    category: 'Financial Analysis',
-    link: '#',
-  },
-  {
-    id: 3,
-    title: 'ABS Compliance Monitoring System',
-    description:
-      'Designed system to monitor 10+ multi-million dollar asset-backed securities for covenant compliance and risk assessment.',
-    technologies: ['Excel', 'Python', 'PowerBI', 'SQL'],
-    category: 'Risk Management',
-    link: '#',
-  },
-  {
-    id: 4,
-    title: 'Regulatory Reporting Automation',
-    description:
-      'Streamlined monthly regulatory reports using XML schema, improving accuracy and reducing processing time.',
-    technologies: ['XML', 'Python', 'Excel', 'Power Automate'],
-    category: 'Process Automation',
-    link: '#',
-  },
-];
-
 const interests = [
   {
     id: 1,
@@ -203,8 +164,8 @@ export default function Home() {
               <a href='#experience'>View Experience</a>
             </Button>
             <Button asChild variant='outline' size='lg' className='group'>
-              <a href='#projects'>
-                View Projects
+              <a href='#interests'>
+                View Interests
                 <span className='inline-block ml-2 group-hover:translate-x-1 transition-transform'>
                   →
                 </span>
@@ -380,57 +341,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id='projects' className='min-h-[100vh] px-4 py-20'>
-        <div className='max-w-7xl mx-auto'>
-          <div className='mb-16 text-center'>
-            <h2 className='text-5xl sm:text-6xl font-bold mb-4'>
-              Projects
-            </h2>
-            <p className='text-xl text-gray-400 max-w-2xl mx-auto'>
-              A collection of financial analysis projects showcasing data-driven
-              insights and process improvements.
-            </p>
-          </div>
-
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8'>
-            {projects.map(project => (
-              <Card
-                key={project.id}
-                className='group border-gray-800 hover:border-gray-600 transition-all duration-300 bg-gray-950'
-              >
-                <CardHeader>
-                  <div className='mb-2'>
-                    <span className='text-xs text-gray-500 uppercase tracking-wider'>
-                      {project.category}
-                    </span>
-                  </div>
-                  <CardTitle className='text-xl group-hover:text-gray-300 transition-colors'>
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className='text-gray-400 text-sm leading-relaxed'>
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent>
-                  <div className='flex flex-wrap gap-2'>
-                    {project.technologies.map(tech => (
-                      <span
-                        key={tech}
-                        className='px-3 py-1 bg-gray-900 border border-gray-800 text-gray-300 text-xs rounded'
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Interests Section */}
       <section id='interests' className='min-h-[100vh] px-4 py-20'>
         <div className='max-w-7xl mx-auto'>
@@ -444,27 +354,18 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-            {interests.map((interest) => (
-              <Card
-                key={interest.id}
-                className='border-gray-800 bg-gray-950'
-              >
-                <CardHeader>
-                  <CardTitle className='text-xl mb-1'>
-                    {interest.title}
-                  </CardTitle>
-                  <CardDescription className='text-gray-400 text-sm'>
-                    {interest.category}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className='text-gray-300 text-sm leading-relaxed'>
+          <div className='max-w-4xl mx-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+              {interests.map((interest) => (
+                <div key={interest.id} className='flex flex-col gap-2'>
+                  <h3 className='text-2xl font-semibold'>{interest.title}</h3>
+                  <p className='text-sm text-gray-500 uppercase tracking-wider'>{interest.category}</p>
+                  <p className='text-gray-300 leading-relaxed'>
                     {interest.description}
                   </p>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className='mt-20 text-center border-t border-gray-800 pt-20'>
