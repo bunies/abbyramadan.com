@@ -59,7 +59,7 @@ const Navigation = () => {
           >
             AR
           </a>
-          <div className="flex space-x-[2rem]">
+          <div className="flex gap-[2rem]">
             {navItems.map((item) => (
               <a
                 key={item.href}
